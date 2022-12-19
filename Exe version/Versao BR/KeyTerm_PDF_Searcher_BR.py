@@ -13,6 +13,7 @@ foundPDFList = []
 def openPDFs():
     for pdf in foundPDFList:
         webbrowser.open_new(pdf)
+    foundPDFList.clear()
     
 def MyGithub():
     webbrowser.open("https://github.com/Luiguie", new=1)
@@ -93,7 +94,7 @@ def aa(cf):
 wd = Tk()
 wd.title("KeyTerm PDF Searcher by Luiguie")
 wd.geometry("800x450")
-#wd.resizable(0,0)
+wd.resizable(0,0)
 bOpen = Button(wd, text = "Selecionar pasta", command = BrowseFile)
 bOpen.grid(row=12,column=0, sticky="sw")
 
