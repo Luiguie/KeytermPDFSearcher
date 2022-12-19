@@ -13,6 +13,7 @@ foundPDFList = []
 def openPDFs():
     for pdf in foundPDFList:
         webbrowser.open_new(pdf)
+    foundPDFList.clear()
     
 def MyGithub():
     webbrowser.open("https://github.com/Luiguie", new=1)
