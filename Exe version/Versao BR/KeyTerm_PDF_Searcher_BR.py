@@ -15,10 +15,10 @@ def openPDFs():
         webbrowser.open_new(pdf)
     foundPDFList.clear()
     
-def MyGithub():
+def my_github():
     webbrowser.open("https://github.com/Luiguie", new=1)
 
-def BrowseFile():
+def browse_file():
     tx.config(state=NORMAL)
     tx.delete(1.0, "end")
     global chosenFile 
@@ -26,7 +26,7 @@ def BrowseFile():
     tx.insert("end", "Sua pasta é: \n" + chosenFile + "\n")
     tx.config(state=DISABLED)
 
-def aa(cf):
+def process(cf):
     tx.config(state=NORMAL)
     tx.delete(1.0, "end")
     tx.insert("end", "Sua pasta é: \n" + chosenFile + "\n")
@@ -95,14 +95,14 @@ wd = Tk()
 wd.title("KeyTerm PDF Searcher by Luiguie")
 wd.geometry("800x450")
 wd.resizable(0,0)
-bOpen = Button(wd, text = "Selecionar pasta", command = BrowseFile)
+bOpen = Button(wd, text = "Selecionar pasta", command = browse_file)
 bOpen.grid(row=12,column=0, sticky="sw")
 
 KT = Entry(wd, bd=5)
 KT.grid(row=13,column=0, sticky="n")
-bSearch = Button(wd, text = "➢", command= lambda:aa(chosenFile))
+bSearch = Button(wd, text = "➢", command= lambda:process(chosenFile))
 bSearch.grid(row=13,column=1, sticky="n")
-credits = Button(wd, text = "Made By Luiguie", command= MyGithub)
+credits = Button(wd, text = "Made By Luiguie", command= my_github)
 credits.grid(row=20,column=0, sticky="sw")
 
 tx = Text(wd, height=25, width=48)
